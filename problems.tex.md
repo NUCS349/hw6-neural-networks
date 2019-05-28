@@ -54,8 +54,20 @@ Read the website for the [CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cif
 
 6. Show a graph of three different, random images from the same class. Do you think this task will be easier or hard than training on MNIST? Why? What are the baseline error rates for this dataset? (0.25 points)
 
-7. Using PyTorch, download and train a neural network to classify images from the CIFAR-10 dataset. Use a network with three hidden layers of size 
+7. Using PyTorch, download and train a neural network to classify images from the CIFAR-10 dataset. Use a network with three fully connected (aka, dense) hidden layers of size 256, 128, 32, respectively, and ReLU activation function on each of the hidden layers. The last layer should have 10 nodes (one for each class) and a softmax activation function. So, your neural network will have a total of five layers: an input layer that takes in examples, three hidden layers, and an output layer that outputs a predicted class. Print out the model architecture using `print(my_pytorch_model)` (where `my_pytorch_model` is the model you made) and include that printout here. Train your model on CIFAR-10 for 2 epochs with batch size 8. (0.5 points)  **Hint: In PyTorch the fully connected layers are called `torch.nn.Linear()`.**
 
 ## Hyperparameter search (1 point)
 
+8. Rerun your experiment from problem 7 with a sigmoid activation function on the hidden layers. Report the accuracy. (0.25 points)
+
+9. Rerun your experiment from problem 7 with four hidden layers of size 512, 256, 128, 64, respectively. Report the accuracy. (0.25 points)
+
+10. Rerun your experiment from problem 7 with a batch size of 16. Report your accuracy. (0.25 points)
+
+11. Which set of hyperparameters gave you the best results? What hyperparameter would you to experiment with next? How would you determine which set of hyperparameters is the best? Which hyperparameters would you test? (0.25 points)
+
 ## Convolutional Layers and Dropout (1 point)
+
+12. Convolutional layers are layers that sweep over and subsample their input in order to represent complex structures in the input layers. For more information about how they work, [see this blog post](https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/). Combining convolutional layers with fully connected layers can provide a boon to scenarios involving learning from images. Add two hidden convolutional layers to your network from problem 7 prior to the fully connected hidden layers. 
+
+13. Dropout question (0.5 points)
