@@ -7,8 +7,3 @@ def test_imports():
     the 'a' in the file name is so this test is run first on a clean Python interpreter.
     """
     import sys
-    import your_code
-    assert 'sklearn' not in sys.modules.keys()
-    assert 'torch' not in sys.modules.keys()
-    assert 'torch.nn' not in sys.modules.keys()
-    assert 'torchvision' not in sys.modules.keys()
