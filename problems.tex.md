@@ -48,8 +48,8 @@ The goal of the next three questions is to train neural networks to classify han
 
 5. (1 point) Select a subset of the MNIST training set with 100 examples and select a subset of the MNIST testing set with 100 examples (recall that you should be selecting examples in such a way that you minimize bias, i.e., make sure all ten digits are in your training and testing set). Train a neural network with two fully connected (aka, dense) hidden layers of size 128, and 64, respectively. Your network should have a total of four layers: an input layer that takes in examples, two hidden layers, and an output layer that outputs a predicted class. Your first three layers should have a ReLU activation function and your last (output) layer should have a softmax activation function. Train your model on your subset for 100 epochs with batch size 10 and using cross entropy loss. Use the SGD optimizer. Make a graph of your training loss at every epoch. Report the time it took to run your network and the accuracy of your network on your training set. **Hint: In PyTorch the fully connected layers are called `torch.nn.Linear()`.**
 
-* *Bongjun: How do they download MNIST dataset? using codes we provided in the previous HWs? or can they use pytorch MNIST downloader?*
-* *Bongjun: It says the network should have a total of four layers (two hidden layers) and the first three layers should have a ReLU. But I think only hidden layers have activation functions (the second and third layers)*
+* **Bongjun: How do they download MNIST dataset? using codes we provided in the previous HWs? or can they use pytorch MNIST downloader?**
+* **Bongjun: It says the network should have a total of four layers (two hidden layers) and the first three layers should have a ReLU. But I think only hidden layers have activation functions (the second and third layers)**
 
   
 6. (1 point) Using the same testing subset, network architecture, and training parameters as before, select a subset of the MNIST training set with 250, 500, 1000. Train a new model for each MNIST subset. Including your answers from question 5, make two graphs; one that shows the amount of training time along the y-axis and number of training examples along the x-axis, and a second that shows accuracy on your testing set on the y-axis and number of training examples on along the x-axis.
@@ -61,7 +61,7 @@ The goal of the next three questions is to train neural networks to classify han
 
 We have provided you with a dataset called DogSet. DogSet is a subset from a popular machine learning dataset called ImageNet (more info [here](http://www.image-net.org/) and [here](https://en.wikipedia.org/wiki/ImageNet)) which is used for image classification. The DogSet dataset is available [here](https://drive.google.com/open?id=1wlZZ8MBbcugcmiPqB4QJ8Jh9BdVFJSoC). (Note: you need to be signed into your `@u.northwestern.edu` google account to view this link). As it name implies, the entire dataset is comprised of images of dogs and labels indicating what dog breed is in the image. The metadata, which correlates any particular image with its label and training/testing partition, is provided in a file called `dogs.csv`. For this task, the testing set is called `valid` under the `partition` header of the provided csv file. We have provided a general data loader for you (in `data/dogs.py`), but you may need to adopt it to your needs when using PyTorch (there are many ways to do this, see the *Training a Classifier* tutorial above).
 
-* *Bongjun: "Training a Classifer" tutorial does not teach how to read your own dataset into pytorch DataLoader. Did you want them to figure it out?*
+* **Bongjun: "Training a Classifer" tutorial does not teach how to read your own dataset into pytorch DataLoader. Did you want them to figure it out?**
 
 The goal of the next three questions is to analyze DogSet and train neural networks to classify dog breeds.
 
@@ -71,13 +71,13 @@ The goal of the next three questions is to analyze DogSet and train neural netwo
 
 10. (0.5 point) Based on your experience with neural networks from the MNIST dataset, roughly determine a subset of the DogSet `train` and `valid` partition to train a neural network with the same architecture and loss that you used for your MNIST networks in questions 5-7. Report the size of your training and testing sets, the number of epochs and batch size that you used. Also report the accuracy of your model and how long it took to train.
 
-* *Bongjun: You cannot use the same architecture that you used for you MNIST model. You should change the number of input nodes because Dogset images have different dimension: MNIST (28,28), Dogset(64, 64, 3). Do you want them to make the dog images gray scale first and then flatten them so they can be fed into the Feed Forward Network?*
-* *Bongjun: It says the images with `valid` tags are used as testing set. Then, don't we use validation set when training models? How do they determine when to stop training? based on training loss?*
-* *Bongjun: I assume the "accuracy" means test accuracy, not training accuracy. Then, how do they measure the accruacy? Are they supposed to report only signle accuracy of the model at final epoch? Or do they have to include a graph showing how the accuracy changes over epochs?*
+* **Bongjun: You cannot use the same architecture that you used for you MNIST model. You should change the number of input nodes because Dogset images have different dimension: MNIST (28,28), Dogset(64, 64, 3). Do you want them to make the dog images gray scale first and then flatten them so they can be fed into the Feed Forward Network?**
+* **Bongjun: It says the images with `valid` tags are used as testing set. Then, don't we use validation set when training models? How do they determine when to stop training? based on training loss?**
+* **Bongjun: I assume the "accuracy" means test accuracy, not training accuracy. Then, how do they measure the accruacy? Are they supposed to report only signle accuracy of the model at final epoch? Or do they have to include a graph showing how the accuracy changes over epochs?**
 
 11. (0.5 points) Now, using the same `train` and `valid` DogSet subsets as in question 10, train a new network with _three_ fully connected hidden layers of size 256, 128, and 64 respectively (five layers total). As before, the first four layers should all use a ReLU activation function, the last layer should use softmax, and the loss function is cross entropy. Use the same number of epochs and batch size as in question 10. Report the accuracy of your model and how long it took to train. How did the accuracy change? How did the training time change? 
 
-* *Bongjun: The question says "the first four layers should all use a ReLU activation function". Does the first four layers include the input layer? it need only 3 ReLU functions since there is no activation for input layer*
+* **Bongjun: The question says "the first four layers should all use a ReLU activation function". Does the first four layers include the input layer? it need only 3 ReLU functions since there is no activation for input layer**
 
 ## Convolutional Layers, Pooling (2.5 points)
 
@@ -98,7 +98,7 @@ One oft cited complaint about neural networks is that they are a "black box", me
 
 15. (0.5 points) The models you have trained have been comparatively tiny compared to the state-of-the-art neural networks on tasks like ImageNet. PyTorch allows you to download a number of very powerful models pre-trained on many common machine learning tasks. Download the VGG-16 model (see [here](https://pytorch.org/docs/stable/torchvision/models.html#classification)) (**WARNING:** this file is ~500MB!) and using the technique from question 14, visualize eight filters from layer 1 and eight filters from layer 13 (1-based).
 
-* *Bongjun: The size of Conv filters in VGG model is (3, 3) for all the Conv layers. so the visualization is just a 3x3 image. I have plotted a couple of filters from the first layer and the last layer. Given this simple visualization, it is hard to tell they capture different patterns. I should search for other visualization methods for CNN, but I feel like this is too much for 1 pt quesiton.*
+* **Bongjun: The size of Conv filters in VGG model is (3, 3) for all the Conv layers. so the visualization is just a 3x3 image. I have plotted a couple of filters from the first layer and the last layer. Given this simple visualization, it is hard to tell they capture different patterns. I should search for other visualization methods for CNN, but I feel like this is too much for 1 pt quesiton.**
 
 16. (0.5 points) What is the difference between filters from layer 1 vs. filters from layer 13? What pattern, if any, do you see between what each filter learned?
 
