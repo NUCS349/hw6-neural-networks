@@ -73,11 +73,11 @@ The goal of the next three questions is to analyze DogSet and train neural netwo
 
 * *Bongjun: You cannot use the same architecture that you used for you MNIST model. You should change the number of input nodes because Dogset images have different dimension: MNIST (28,28), Dogset(64, 64, 3). Do you want them to make the dog images gray scale first and then flatten them so they can be fed into the Feed Forward Network?*
 * *Bongjun: It says the images with `valid` tags are used as testing set. Then, don't we use validation set when training models? How do they determine when to stop training? based on training loss?*
-* *Bongjun: I assume the "accuracy" means test accuracy, not training accuracy. Then, how do they measure the accruacy? Are they supposed to report only signle accuracy of the model at final epoch? Or do they have to include a graph showing how the accuracy changes over epochs?
+* *Bongjun: I assume the "accuracy" means test accuracy, not training accuracy. Then, how do they measure the accruacy? Are they supposed to report only signle accuracy of the model at final epoch? Or do they have to include a graph showing how the accuracy changes over epochs?*
 
 11. (0.5 points) Now, using the same `train` and `valid` DogSet subsets as in question 10, train a new network with _three_ fully connected hidden layers of size 256, 128, and 64 respectively (five layers total). As before, the first four layers should all use a ReLU activation function, the last layer should use softmax, and the loss function is cross entropy. Use the same number of epochs and batch size as in question 10. Report the accuracy of your model and how long it took to train. How did the accuracy change? How did the training time change? 
 
-* *Bongjun: The question says "the first four layers should all use a ReLU activation function". Does the first four layers include the input layer? it need only 3 ReLU functions since there is no activation for input layer *
+* *Bongjun: The question says "the first four layers should all use a ReLU activation function". Does the first four layers include the input layer? it need only 3 ReLU functions since there is no activation for input layer*
 
 ## Convolutional Layers, Pooling (2.5 points)
 
