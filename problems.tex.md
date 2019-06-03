@@ -115,13 +115,13 @@ Determine reasonable values of kernel size and stride for each layer and report 
 
 15. (1 point) Train your convolutional model on DogSet. After every epoch, record three things: the loss of your model on the training set, the loss of your model on the validation set, and the accuracy of your model on the validation set. 
 
-  A. Report the number of epochs for your model trained, before terminating.
+    * Report the number of epochs for your model trained, before terminating.
   
-  B. Make a graph that has both training and validation loss on the y-axis and epoch on the x-axis.
+    * Make a graph that has both training and validation loss on the y-axis and epoch on the x-axis.
   
-  C. Make a graph that has the validation accuracy on the y-axis and epoch on the x-axis. 
+    * Make a graph that has the validation accuracy on the y-axis and epoch on the x-axis. 
 
-  D. Report the accuracy of your model on the testing set.
+    * Report the accuracy of your model on the testing set.
 
 ## General Questions About Neural Networks (2.0 points)
 
