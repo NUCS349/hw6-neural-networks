@@ -43,15 +43,15 @@ Read the first four tutorials on [this page](https://pytorch.org/tutorials/begin
 
 Let us train neural networks to classify handwritten digits from the MNIST dataset and analyze the accuracy and training time of these neural networks. 
 
-**Build the model architecture:** Create a neural network with two fully connected (aka, dense) hidden layers of size 128, and 64, respectively. Your network should have a total of four layers: an input layer that takes in examples, two hidden layers, and an output layer that outputs a predicted class. Your hidden layers should have a ReLU activation function and your last (output) layer should have a softmax activation function. *Hint: In PyTorch the fully connected layers are called `torch.nn.Linear()`.
+**Build the model architecture:** Create a neural network with two fully connected (aka, dense) hidden layers of size 128, and 64, respectively. Your network should have a total of four layers: an input layer that takes in examples, two hidden layers, and an output layer that outputs a predicted class (10 possible classes, one for each digit class in MNIST). Your hidden layers should have a ReLU activation function and your last (output) layer should have a softmax activation function and be of size 10. *Hint: In PyTorch the fully connected layers are called `torch.nn.Linear()`.
 
-*QUESTION: WHAT SHOULD THE OUTPUT LAYER LOOK LIKE? 10 NODES WITH SIGMOID ACTIVATION? WHAT ARE YOU THINKING HERE?
+*QUESTION: WHAT SHOULD THE OUTPUT LAYER LOOK LIKE? 10 NODES WITH SIGMOID ACTIVATION? WHAT ARE YOU THINKING HERE? (prem: tried to answer)
 
 **Use these training parameters:** When you train a model, train for 100 epochs with batch size of 10 and using cross entropy loss. Use the SGD optimizer with a learning rate of 0.01. 
 
 **Making training sets:** Create one training set of each of these sizes {500, 1000, 1500, 2000} from MNIST. Note that you should be selecting examples in such a way that you minimize bias, i.e., make sure all ten digits are equally represented in each of your training sets. To do this, you can use `load_mnist_data` function in `load_data.py` where you can adjust the number of examples per digit and the amount of training / testing data. 
 
-*Hint: To read your MNIST dataset for training, you may not need to use a PyTorch `DataLoader`. If, however, you want to use it with your numpy NMIST dataset, you should use your custom dataset class. We included the class definition for you in the HW (`MyDataset` in `my_dataset.py`) You can see more details about using costum dataset in this [blog](https://stanford.edu/~shervine/blog/pytorch-how-to-generate-data-parallel) or [github repo](https://github.com/utkuozbulak/pytorch-custom-dataset-examples))
+*Hint: To read your MNIST dataset for training, you may not need to use a PyTorch `DataLoader`. If, however, you want to use it with your numpy NMIST dataset, you should use your custom dataset class. We included the class definition for you in the HW (`MyDataset` in `my_dataset.py`) You can see more details about using custom dataset in this [blog](https://stanford.edu/~shervine/blog/pytorch-how-to-generate-data-parallel) or [github repo](https://github.com/utkuozbulak/pytorch-custom-dataset-examples))
 
 **Train one model per training set:** Train a new model for each MNIST training set you created and test it on the MNIST testing subset. Use the same architecture for every model. For each model you train, record the loss function value every epoch. Record the time required to train for 100 epochs. Once the model is trained, record testing accuracy on the training set using the model.
 
