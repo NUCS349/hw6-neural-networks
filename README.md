@@ -5,7 +5,6 @@ here, we will check.
 
 
 In this assignment, you will:
-- Write a fully connected neural network from scratch
 - Learn how to use PyTorch
 - Implement two types of neural networks
 - Explore the impact of different hyperparameters on your networks' performance
