@@ -110,7 +110,7 @@ Convolutional layers are layers that sweep over and subsample their input in ord
 
 15. (1 point) Train your convolutional model on DogSet. After every epoch, record three things: the loss of your model on the training set, the loss of your model on the validation set, and the accuracy of your model on the validation set. 
 
-    * Report the number of epochs for your model trained, before terminating.
+    * Report the number of epochs your model trained, before terminating.
   
     * Make a graph that has both training and validation loss on the y-axis and epoch on the x-axis.
   
