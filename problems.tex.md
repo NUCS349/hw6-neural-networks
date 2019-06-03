@@ -53,7 +53,7 @@ Let us train neural networks to classify handwritten digits from the MNIST datas
 
 *Hint: To read your MNIST dataset for training, you may want to use a PyTorch `DataLoader`, but this is not required. If you do want to use it with your numpy NMIST dataset, you should use a custom PyTorch `DataLoader` class. We included the class definition for you in the HW (`MyDataset` in `my_dataset.py`) You can see more details about using custom dataset in this [blog](https://stanford.edu/~shervine/blog/pytorch-how-to-generate-data-parallel) or [github repo](https://github.com/utkuozbulak/pytorch-custom-dataset-examples))
 
-**Train one model per training set:** Train a new model for each MNIST training set you created and test it on the MNIST testing subset. Use the same architecture for every model. For each model you train, record the loss function value every epoch. Record the time required to train for 100 epochs. (From python's built in `time` module, use `time.time()`.)
+**Train one model per training set:** Train a new model for each MNIST training set you created and test it on the MNIST testing subset. Use the same architecture for every model. For each model you train, record the loss function value every epoch. Record the time required to train for 100 epochs. From python's built in `time` module, use `time.time()`.
 
 4. (0.5 points) Given the data from your 4 trained models, create a graph that shows the amount of training time along the y-axis and number of training examples along the x-axis. 
 
@@ -88,7 +88,7 @@ DogSet is a subset from a popular machine learning dataset called ImageNet (more
 
 11. (1.0 point) Train a model on DogSet. After every epoch, record three things: the loss of your model on the training set, the loss of your model on the validation set, and the accuracy of your model on the validation set. 
 
-    * Report the number of epochs for your model trained, before terminating.
+    * Report the number of epochs your model trained, before terminating.
   
     * Make a graph that has both training and validation loss on the y-axis and epoch on the x-axis.
   
@@ -96,7 +96,7 @@ DogSet is a subset from a popular machine learning dataset called ImageNet (more
 
     * Report the accuracy of your model on the testing set.
   
-12. (0.5 points) Describe the interaction between training loss, validation loss and validation accuracy. When do you think your network stopped learning? Why do you think that? Back up your answer by referring to your graphs.
+12. (0.5 points) Describe the interaction between training loss, validation loss and validation accuracy. When do you think your network stopped learning something meaningful to the problem? Why do you think that? Back up your answer by referring to your graphs.
   
 
 ## Convolutional Layers (2 points)
