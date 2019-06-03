@@ -118,7 +118,7 @@ Convolutional layers are layers that sweep over and subsample their input in ord
 
     * Report the accuracy of your model on the testing set.
 
-## General Questions About Neural Networks (2.0 points)
+## Thinking about deep models (2.0 points)
 
 16. (0.5 points) For any binary function of binary inputs, is it possible to construct some deep network built using only perceptron activation functions that can calculate this function correctly? If so, how would you do it? If not, why not?
 
