@@ -30,7 +30,7 @@ Here is a comparison of PyTorch and Numpy methods: [https://github.com/wkentaro/
 
 _Note: To determine which python you are using, type `python` into your command line to get an interactive shell, you should see your python version in the first line._
 
-
+ 
 ## Understanding PyTorch (1 point)
 
 Read the first four tutorials on [this page](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html) ("*What is PyTorch?*", "*Autograd: Automatic Differentiation*", "*Neural Networks*", and "*Training a Classifier*") and then answer the following questions.
