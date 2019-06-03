@@ -1,11 +1,12 @@
-# HWN: FILL IN for EECS 349 @ NU
+# HW8: Neural Networks for EECS 349 @ NU
 **IMPORTANT: PUT YOUR NETID IN THE FILE** `netid` in the root directory of the assignment. 
 This is used to put the autograder output into Canvas. Please don't put someone else's netid 
 here, we will check.
 
 
 In this assignment, you will:
-- FILL IN
+- Learn about PyTorch
+- Implement two neural networks
 
 ## Clone this repository
 
@@ -26,6 +27,10 @@ Do not edit anything in the `tests` directory. Files can be added to `tests` but
 Make a conda environment for this assignment, and then run:
 
 ``pip install -r requirements.txt``
+
+**Important: PyTorch is not included in `requirements.txt`!** To install PyTorch, find the correct install command for your operating system and version of python [here](https://pytorch.org/get-started/locally/). For "PyTorch Build" select the `Stable (1.1)` build, select your operating system, for "Package" select `pip` , for "Language" select your python version (either python 3.5, 3.6, or 3.7), and finally for "CUDA" select `None`. **Make sure to run the command with your conda environment activated**
+
+_Note: To determine which python you are using, type `python` into your command line to get an interactive shell, you should see your python version in the first line._
 
 ## Running the test cases
 
