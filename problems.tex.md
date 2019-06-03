@@ -39,20 +39,28 @@ Read the first four tutorials on [this page](https://pytorch.org/tutorials/begin
 
 3. (0.25 points) Why does PyTorch have its own tensor class (`torch.Tensor`) when it is extremely similar to numpy's `np.ndarray`?
 
+## Training on MNIST (2 points)
 
-## Training on MNIST (3 points)
+The goal of the next three questions is to train neural networks to classify handwritten digits from the MNIST dataset and analyze the accuracy and training time of these neural networks. 
 
-4. (0.5 points) In a previous homework, you have had to use strategies such as One-Vs-All (OVA) or One-Vs-One (OVO) to train multiclass classifiers. Is this strategy something that you must implement for neural networks? Why or why not? (0.5 points)
+**Build the model architecture:** Create a neural network with two fully connected (aka, dense) hidden layers of size 128, and 64, respectively. Your network should have a total of four layers: an input layer that takes in examples, two hidden layers, and an output layer that outputs a predicted class. Your hidden layers should have a ReLU activation function and your last (output) layer should have a softmax activation function. *Hint: In PyTorch the fully connected layers are called `torch.nn.Linear()`.
 
-The goal of the next three questions is to train neural networks to classify handwritten digits from the MNIST dataset and analyze the accuracy and training time of these neural networks. You will need to load a subset of the MNIST data. You can use `load_mnist_data` function in `load_data.py` where you can adjust the number of examples per digit and the amount of training / testing data.
+**Use these training parameters:** When you train a model, train for 100 epochs with batch size of 10 and using cross entropy loss. Use the SGD optimizer with a learning rate of 0.01. 
 
-5. (1 point) Select a subset of the MNIST training set with 500 examples (recall that you should be selecting examples in such a way that you minimize bias, i.e., make sure all ten digits are in your training). Train a neural network with two fully connected (aka, dense) hidden layers of size 128, and 64, respectively. Your network should have a total of four layers: an input layer that takes in examples, two hidden layers, and an output layer that outputs a predicted class. Your hidden layers should have a ReLU activation function and your last (output) layer should have a softmax activation function. Train your model on your subset for 100 epochs with batch size 10 and using cross entropy loss. Use the SGD optimizer with a learning rate of 0.01. Make a graph of your training loss at every epoch. Report the time it took to run your network. **Hint: 1) In PyTorch the fully connected layers are called `torch.nn.Linear()`. 2) To read your MNIST dataset for training, you may not need to use a PyTorch `DataLoader`. But if you want to use it with your numpy NMIST dataset, you should use your costum dataset class. We included the class definition for you in the HW (`MyDataset` in `my_dataset.py`) You can see more details about using costum dataset in this [blog](https://stanford.edu/~shervine/blog/pytorch-how-to-generate-data-parallel) or [github repo](https://github.com/utkuozbulak/pytorch-custom-dataset-examples))**
+**Making training sets:** Create one training set of each of these sizes {500, 1000, 1500, 2000} from MNIST. Note that you should be selecting examples in such a way that you minimize bias, i.e., make sure all ten digits are equally represented in each of your training sets. To do this, you can use `load_mnist_data` function in `load_data.py` where you can adjust the number of examples per digit and the amount of training / testing data. 
 
-  
-6. (1 point) Using the same network architecture, and training parameters as before, select a subset of the MNIST training set with 1000, 1500, 2000. Select a subset of the MNIST testing set with 1000 examples (recall that you should be selecting examples in such a way that you minimize bias, i.e., make sure all ten digits are in your training). Train a new model for each MNIST training subset and test it on the MNIST testing subset. Including your answers from question 5, make two graphs; one that shows the amount of training time along the y-axis and number of training examples along the x-axis, and a second that shows classification accuracy on your testing set on the y-axis and number of training examples on along the x-axis.
+*Hint: To read your MNIST dataset for training, you may not need to use a PyTorch `DataLoader`. If, however, you want to use it with your numpy NMIST dataset, you should use your custom dataset class. We included the class definition for you in the HW (`MyDataset` in `my_dataset.py`) You can see more details about using costum dataset in this [blog](https://stanford.edu/~shervine/blog/pytorch-how-to-generate-data-parallel) or [github repo](https://github.com/utkuozbulak/pytorch-custom-dataset-examples))
 
-7. (0.5 points) What happens to your training time as the number of training examples increases? Roughly how many hours would you expect it to take to train on the full MNIST training set using the same architecture (on your CPU)? What happens to the accuracy as the number of training examples increases?
+**Train one model per training set:** Train a new model for each MNIST training set you created and test it on the MNIST testing subset. Record the loss function value every epoch. Record the time required to train for 100 epochs.
 
+4. (0.5 points) Create a graph that shows the amount of training time along the y-axis and number of training examples along the x-axis. 
+
+5. (0.5 points) What happens to your training time as the number of training examples increases? Roughly how many hours would you expect it to take to train on the full MNIST training set using the same architecture on the same hardware you used to create the graph in question 4?
+
+5. (0.5 points) Create a graph that shows classification accuracy on your testing set on the y-axis and number of training 
+examples on along the x-axis. 
+
+6. (0.5 points) What happens to the accuracy as the number of training examples increases?
 
 ## DogSet (2.5 points)
 
