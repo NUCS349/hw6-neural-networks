@@ -20,15 +20,15 @@ For this assigment, you will be learning about a popular library for implementin
 
 Here is the official website for PyTorch: [https://pytorch.org/](https://pytorch.org/)
 
-**Important: PyTorch is not included in `requirements.txt`!** To install PyTorch, find the correct install command for your operating system and version of python [here](https://pytorch.org/get-started/locally/). For "PyTorch Build" select the `Stable (1.1)` build, select your operating system, for "Package" select `pip` , for "Language" select your python version (either python 3.5, 3.6, or 3.7), and finally for "CUDA" select `None`. **Make sure to run the command with your conda environment activated**
-
-_Note: To determine which python you are using, type `python` into your command line to get an interactive shell, you should see your python version in the first line._
-
 Here is the API documentation: [https://pytorch.org/docs/stable/index.html](https://pytorch.org/docs/stable/index.html)
 
 Here is a cheat sheet of commonly used methods: [https://pytorch.org/tutorials/beginner/ptcheat.html](https://pytorch.org/tutorials/beginner/ptcheat.html)
 
 Here is a comparison of PyTorch and Numpy methods: [https://github.com/wkentaro/pytorch-for-numpy-users](https://github.com/wkentaro/pytorch-for-numpy-users)
+
+**IMPORTANT: PyTorch is not included in `requirements.txt`!** To install PyTorch, find the correct install command for your operating system and version of python [here](https://pytorch.org/get-started/locally/). For "PyTorch Build" select the `Stable (1.1)` build, select your operating system, for "Package" select `pip` , for "Language" select your python version (either python 3.5, 3.6, or 3.7), and finally for "CUDA" select `None`. **Make sure to run the command with your conda environment activated.**
+
+_Note: To determine which python you are using, type `python` into your command line to get an interactive shell, you should see your python version in the first line._
 
 
 ## Understanding PyTorch (1 point)
@@ -51,7 +51,7 @@ Let us train neural networks to classify handwritten digits from the MNIST datas
 
 **Making training sets:** Create one training set of each of these sizes {500, 1000, 1500, 2000} from MNIST. Note that you should be selecting examples in such a way that you minimize bias, i.e., make sure all ten digits are equally represented in each of your training sets. To do this, you can use `load_mnist_data` function in `load_data.py` where you can adjust the number of examples per digit and the amount of training / testing data. 
 
-*Hint: To read your MNIST dataset for training, you may not need to use a PyTorch `DataLoader`. If, however, you want to use it with your numpy NMIST dataset, you should use your custom dataset class. We included the class definition for you in the HW (`MyDataset` in `my_dataset.py`) You can see more details about using custom dataset in this [blog](https://stanford.edu/~shervine/blog/pytorch-how-to-generate-data-parallel) or [github repo](https://github.com/utkuozbulak/pytorch-custom-dataset-examples))
+*Hint: To read your MNIST dataset for training, you may want to use a PyTorch `DataLoader`, but this is not required. If you do want to use it with your numpy NMIST dataset, you should use a custom PyTorch `DataLoader` class. We included the class definition for you in the HW (`MyDataset` in `my_dataset.py`) You can see more details about using custom dataset in this [blog](https://stanford.edu/~shervine/blog/pytorch-how-to-generate-data-parallel) or [github repo](https://github.com/utkuozbulak/pytorch-custom-dataset-examples))
 
 **Train one model per training set:** Train a new model for each MNIST training set you created and test it on the MNIST testing subset. Use the same architecture for every model. For each model you train, record the loss function value every epoch. Record the time required to train for 100 epochs. Once the model is trained, record testing accuracy on the training set using the model.
 
@@ -80,7 +80,7 @@ DogSet is a subset from a popular machine learning dataset called ImageNet (more
 
 **Use these training parameters:** Use a batch size of 10 and using cross entropy loss. Use the SGD optimizer with a learning rate of 0.01. 
 
-**When to stop training:** Stop training after 100 epochs or your validation loss changes by less than 1e-4 for three epochs in a row, whichever happens first. 
+**When to stop training:** Stop training after 100 epochs or your validation loss decreases by less than 1e-4 for three epochs in a row, whichever happens first. 
 
 **Training, Testing, Validation sets:** You should use training examples from `train` partition of DogSet. Validation should come from the `valid` partition and testing examples should come from the `test` partition.
 
@@ -99,7 +99,7 @@ DogSet is a subset from a popular machine learning dataset called ImageNet (more
 12. (0.5 points) Describe the interaction between training loss, validation loss and validation accuracy. When do you think your network stopped learning? Why do you think that? Back up your answer by referring to your graphs.
   
 
-## Convolutional Layers, Pooling (2 points)
+## Convolutional Layers (2 points)
 
 Convolutional layers are layers that sweep over and subsample their input in order to represent complex structures in the input layers. For more information about how they work, [see this blog post](https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/). Don't forget to read the PyTorch documentation about Convolutional Layers (linked above).
 

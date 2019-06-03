@@ -29,6 +29,9 @@ Make a conda environment for this assignment, and then run:
 
 ``pip install -r requirements.txt``
 
+**IMPORTANT: PyTorch is not included in `requirements.txt`!** To install PyTorch, find the correct install command for your operating system and version of python [here](https://pytorch.org/get-started/locally/). For "PyTorch Build" select the `Stable (1.1)` build, select your operating system, for "Package" select `pip` , for "Language" select your python version (either python 3.5, 3.6, or 3.7), and finally for "CUDA" select `None`. **Make sure to run the command with your conda environment activated.**
+
+
 ## Running the test cases
 
 The test cases can be run with:
