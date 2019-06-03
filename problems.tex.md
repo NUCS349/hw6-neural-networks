@@ -43,9 +43,7 @@ Read the first four tutorials on [this page](https://pytorch.org/tutorials/begin
 
 Let us train neural networks to classify handwritten digits from the MNIST dataset and analyze the accuracy and training time of these neural networks. 
 
-**Build the model architecture:** Create a neural network with two fully connected (aka, dense) hidden layers of size 128, and 64, respectively. Your network should have a total of four layers: an input layer that takes in examples, two hidden layers, and an output layer that outputs a predicted class (10 possible classes, one for each digit class in MNIST). Your hidden layers should have a ReLU activation function and your last (output) layer should have a softmax activation function and be of size 10. *Hint: In PyTorch the fully connected layers are called `torch.nn.Linear()`.
-
-*QUESTION: WHAT SHOULD THE OUTPUT LAYER LOOK LIKE? 10 NODES WITH SIGMOID ACTIVATION? WHAT ARE YOU THINKING HERE? (prem: tried to answer)
+**Build the model architecture:** Create a neural network with two fully connected (aka, dense) hidden layers of size 128, and 64, respectively. Your network should have a total of four layers: an input layer that takes in examples, two hidden layers, and an output layer that outputs a predicted class (10 possible classes, one for each digit class in MNIST). Your hidden layers should have a ReLU activation function. Your last (output) layer shoud be of size 10 and should have a softmax activation function applied to the output. *Hint: In PyTorch the fully connected layers are called `torch.nn.Linear()`.
 
 **Use these training parameters:** When you train a model, train for 100 epochs with batch size of 10 and using cross entropy loss. Use the SGD optimizer with a learning rate of 0.01. 
 
@@ -64,7 +62,7 @@ examples on along the x-axis.
 
 7. (0.5 points) What happens to the accuracy as the number of training examples increases?
 
-## DogSet (2.5 points)
+## Exploring DogSet (1 point)
 
 DogSet is a subset from a popular machine learning dataset called ImageNet (more info [here](http://www.image-net.org/) and [here](https://en.wikipedia.org/wiki/ImageNet)) which is used for image classification. The DogSet dataset is available [here](https://drive.google.com/open?id=1wlZZ8MBbcugcmiPqB4QJ8Jh9BdVFJSoC). (Note: you need to be signed into your `@u.northwestern.edu` google account to view this link). As it name implies, the entire dataset is comprised of images of dogs and labels indicating what dog breed is in the image. The metadata, which correlates any particular image with its label and partition, is provided in a file called `dogs.csv`. We have provided a general data loader for you (in `data/dogs.py`), but you may need to adopt it to your needs when using PyTorch. **Note: You may need to use the dataset class we provided in MNIST questions if you want to use a PyTorch `DataLoader`**
 
@@ -72,68 +70,66 @@ DogSet is a subset from a popular machine learning dataset called ImageNet (more
 
 The goal of the next three questions is to analyze DogSet and train neural networks to classify dog breeds.
 
-8. (0.5 points) How many images are in DogSet total? How many have labels? How many are in the `train` partition? How many in the `valid` partition? How many are in the `test` partition? What are the dimensions of each image? What is the color palette of the images (greyscale, black & white, RBG)? How many dog breeds are there? 
-
-*QUESTION: There are 8 parts to a 1/2 point question. How do you plan on grading this?
+8. (0.5 points) In Dogset, how many are in the `train` partition, the `valid` partition and the `test` partition? What is the color palette of the images (greyscale, black & white, RBG)? How many dog breeds are there? 
 
 9. (0.5 points) Select one type of breed. Look through variants of images of this dog breed. Show 3 different images of the same breed that you think are particularly challenging for a classifier to get correct. Explain why you think these three images might be challenging for a classifier. 
 
-==============QUESTION 10 IS BIG==========
-10. (1.0 point) You will train and test models on subsets of DogSet. If you look at `dogs.csv`, you will notice that there are many unlabled examples in the testing partition. Therefore, you will use only `train` and `valid` partitions of DogSet. 
+## Training A Model on DogSet (2 points)
+**Build the model architecture:** Create a neural network with two fully connected (aka, dense) hidden layers of size 128, and 64, respectively. Your network should have a total of four layers: an input layer that takes in examples, two hidden layers, and an output layer that outputs a predicted class (one node for each dog class in DogSet). Your hidden layers should have a ReLU activation function. Your last (output) layer should have a softmax activation function applied to the output.
 
-Based on your experience with neural networks from the MNIST dataset, roughly determine a subset of the DogSet for training, validation, and testing
+*QUESTION: SHOULD WE SPECIFY THE INPUT LAYER MORE CLEARLY TO DEAL WITH THE RGB ISSUE? WHAT SHOULD HAPPEN HERE?
 
-*QUESTION: ROUGHLY DETERMINE?
+**Use these training parameters:** Use a batch size of 10 and using cross entropy loss. Use the SGD optimizer with a learning rate of 0.01. 
 
-to train a neural network with the same architecture (meaning, a network with two fully connected hidden layers with nodes of size 128 and 64, and ReLU activation functions) and loss that you used for your MNIST networks in questions 5-7. 
+**When to stop training:** Stop training after 100 epochs or your validation loss changes by less than 1e-4 for three epochs in a row, whichever happens first. 
 
-You should sample traning examples from `train` partition of DogSet. Validation and testing set should be sampled from `valid` partition of DogSet. 
-
-This network will have a different input size and output number of classes from the network for MNIST dataset. Train the network on your dataset.
-
-Stop training after 100 epochs or your validation loss changes by less than 1e-4 for three epochs in a row, whichever happens first. 
-
-Report the size of your training, validation and testing sets, the number of epochs it trained for and batch size that you used. 
-
-After every epoch, record three things: the loss of your model on the training set, the loss of your model on the validation set, and the accuracy of your model on the validation set. 
-
-*QUESTION: THE TWO QUESTIONS BELOW RE THE ONLY GRADABLE ITEMS. WHAT ARE THE POINT VALUES FOR THESE 2 GRAPHS AND FOR REPORTING ACCURACY?
-
-Make one graph that has both training and validation loss on the y-axis and epoch on the x-axis, and another graph that has the validation accuracy on the y-axis and epoch on the x-axis. 
-
-Report the accuracy of your model on the testing set. **(Note: If you want, you can use all the labeled examples in DogSet dataset, not sampling its subsets. But you still need to split the `valid` partition of DogSet into validation and testing set for your experiment.)**
-
-=========QUESTION 10 ENDS HERE==========
-
-11. (0.5 points) Now, using the same `train`, `valid`, and `test` DogSet subsets as in question 10, train a new network with _three_ fully connected hidden layers of size 256, 128, and 64 respectively (five layers total). As before, the hidden layers should all use a ReLU activation function, the last layer should use softmax, and the loss function is cross entropy. Use the same stopping criterion as question 10. Make the same graphs as in question 10. Report the accuracy of your model on the testing set and how long it took to train. How did the accuracy change? How did the loss change?
+**Making training sets:** You should use traning examples from `train` partition of DogSet. Validation shoud come from the `valid` partition and testing examples should come from the 'test' partition.
 
 
-## Convolutional Layers, Pooling (2.5 points)
+10. (0.5 points) How many connections (weights) Does the network you trained in 10 have?
+
+11. (1.0 point) Train a model on DogSet. After every epoch, record three things: the loss of your model on the training set, the loss of your model on the validation set, and the accuracy of your model on the validation set. 
+
+  A. Report the number of epochs for your model trained, before terminating.
+  
+  B. Make a graph that has both training and validation loss on the y-axis and epoch on the x-axis.
+  
+  C. Make a graph that has the validation accuracy on the y-axis and epoch on the x-axis. 
+
+  D. Report the accuracy of your model on the testing set.
+  
+12. (0.5 points) Describe the interaction between training loss, validation loss and validation accuracy. When do you think your network stopped learning? Why do you think that? Back up your answer by referring to your graphs.
+  
+
+## Convolutional Layers, Pooling (2 points)
 
 Convolutional layers are layers that sweep over and subsample their input in order to represent complex structures in the input layers. For more information about how they work, [see this blog post](https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/). Don't forget to read the PyTorch documentation about Convolutional Layers (linked above).
 
-12. (0.5 points) Convolutional layers produce outputs that are of different size than their input by representing more than one input pixel with each node. If a 2D convolutional layer has `3` channels, batch size `16`, input size `(32, 32)`, padding `(4, 8)`, dilation `(1, 1)`, kernel size `(8, 4)`, and stride `(2, 2)`, what is the output size of the layer?
+13. (0.5 points) Convolutional layers produce outputs that are of different size than their input by representing more than one input pixel with each node. If a 2D convolutional layer has `3` channels, batch size `16`, input size `(32, 32)`, padding `(4, 8)`, dilation `(1, 1)`, kernel size `(8, 4)`, and stride `(2, 2)`, what is the output size of the layer?
 
+14. (0.5 point) Combining convolutional layers with fully connected layers can provide a boon in scenarios involving learning from images. Using your same `train`, `valid`, and `test` DogSet  11, replace each of your first two hidden layers with a convolutional layer. When you call the PyTorch convolutional layer function, leave all of the arguments to their default settings except for kernel size and stride. 
 
-13. (1 point) Combining convolutional layers with fully connected layers can provide a boon in scenarios involving learning from images. Using your same `train`, `valid`, and `test` DogSet subsets from questions 10 and 11, replace each of your first two hidden layers with a convolutional layer. When you call the PyTorch convolutional layer function, leave all of the arguments to their default settings except for kernel size and stride. 
+*QUESTION: IS THE NUMBER OF CHANNELS DEFAULT A REASONABLE ONE? DO YOU JUST GET 1? IS THAT WHAT WE WANT?  DO WE NEED TO PICK SOMETHING FOR THEM ? (SEE PREVIOUS PARAGRAPH) ALSO, WHAT ARE THE POINT VALUES FOR REPORTING YOUR KERNEL SIZE VS MAKING THE GRAPH?
 
-*QUESTION: IS THE NUMBER OF CHANNELS DEFAULT A REASONABLE ONE? (SEE PREVIOUS PARAGRAPH) ALSO, WHAT ARE THE POINT VALUES FOR REPORTING YOUR KERNEL SIZE VS MAKING THE GRAPH?
+Determine reasonable values of kernel size and stride for each layer and report what you chose. 
 
-Determine reasonable values of kernel size and stride for each layer and report what you chose. Train your neural network with the same training parameters as before (number of epochs, stopping condition, batch size, loss function, learning rate, etc). Make the same graphs as question 10 (train and validation loss, and validation accuracy) and report the results of your classifier on the testing set.
+15. (1 point) Train your convolutional model on DogSet. After every epoch, record three things: the loss of your model on the training set, the loss of your model on the validation set, and the accuracy of your model on the validation set. 
 
-14. (1 point) Pooling can reduce the feature space of convolutional layers while keeping the most important information. A common type of pooling is _max pooling_, where the maximum value of each convolutional filter is kept. Keeping everything the same as question 13, add a max pooling layer after each convolutional layer that you added in question 13. Train and test on the same DogSet subset as before. How did adding max pooling affect your accuracy? Report your accuracy and training time.
+  A. Report the number of epochs for your model trained, before terminating.
+  
+  B. Make a graph that has both training and validation loss on the y-axis and epoch on the x-axis.
+  
+  C. Make a graph that has the validation accuracy on the y-axis and epoch on the x-axis. 
 
-*QUESTION: WHAT ARE YOU LOOKING FOR IN THE ANSWERS TO 14? WHAT IS THE WEIGHTING OF THE POINTS?
+  D. Report the accuracy of your model on the testing set.
 
+## General Questions About Neural Networks (2.0 points)
 
-## Using Pre-Trained Models (1.0 points)
+16. (0.5 points) For any binary function of binary inputs, is it possible to construct some deep network built using only perceptron activation functions that can calculate this function correctly? If so, how would you do it? If not, why not?
 
-The models you have trained have been comparatively tiny compared to the state-of-the-art neural networks on tasks like ImageNet. PyTorch allows you to download a number of very powerful models pre-trained on many common machine learning tasks. You can see a list of all available models trained on ImageNet [here](https://pytorch.org/docs/stable/torchvision/models.html#classification).
+17. (0.5 points) Is it possible to learn any arbitrary binary function from data using a network build only using percetron activation functions? If so, how would you do it? If not, why not? 
 
-15. (0.5 points) Select 3 models from the list of pretrained models (**WARNING:** some models are as big as ~500MB!) and answer the following questions: How many layers does this model have? How many are convolutional layers? How many are fully connected layers? What do "top-1 error" and "top-5 error" mean? What is the top-1 error for the model you choose? What is the top-5 error?
+18. (0.5 points) Is it possible to build a network out of linear nodes t
 
-16. (0.5 points) Now use your selected pretrained models and use them to predict dog breeds from your DogSet `test` partition. Compare the results from each of the pretrained models to the best dog breed classifier model that you trained. **HINT: you may have to upsample the DogSet images to use with the pretrained models. See the docs for the `DogsDataset` class.**
-
-*QUESTION: WHAT'S THE PLAN TO DEAL WITH BONGJUN'S QUESITONS ABOUT THE NON-COMPARABLE NATURE OF THE DOWNLOADED IMAGENET-TRAINED MODELS VS THE DOGNET MODELS?
-
+19. (0.5 points)
 
