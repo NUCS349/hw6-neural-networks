@@ -53,14 +53,14 @@ Let us train neural networks to classify handwritten digits from the MNIST datas
 
 *Hint: To read your MNIST dataset for training, you may want to use a PyTorch `DataLoader`, but this is not required. If you do want to use it with your numpy NMIST dataset, you should use a custom PyTorch `DataLoader` class. We included the class definition for you in the HW (`MyDataset` in `my_dataset.py`) You can see more details about using custom dataset in this [blog](https://stanford.edu/~shervine/blog/pytorch-how-to-generate-data-parallel) or [github repo](https://github.com/utkuozbulak/pytorch-custom-dataset-examples))
 
-**Train one model per training set:** Train a new model for each MNIST training set you created and test it on the MNIST testing subset. Use the same architecture for every model. For each model you train, record the loss function value every epoch. Record the time required to train for 100 epochs. Once the model is trained, record testing accuracy on the training set using the model.
+**Train one model per training set:** Train a new model for each MNIST training set you created and test it on the MNIST testing subset. Use the same architecture for every model. For each model you train, record the loss function value every epoch. Record the time required to train for 100 epochs. (From python's built in `time` module, use `time.time()`.)
 
 4. (0.5 points) Given the data from your 4 trained models, create a graph that shows the amount of training time along the y-axis and number of training examples along the x-axis. 
 
 5. (0.5 points) What happens to your training time as the number of training examples increases? Roughly how many hours would you expect it to take to train on the full MNIST training set using the same architecture on the same hardware you used to create the graph in question 4?
 
 6. (0.5 points) Create a graph that shows classification accuracy on your testing set on the y-axis and number of training 
-examples on along the x-axis. 
+examples on the x-axis. 
 
 7. (0.5 points) What happens to the accuracy as the number of training examples increases?
 
@@ -84,7 +84,7 @@ DogSet is a subset from a popular machine learning dataset called ImageNet (more
 
 **Training, Testing, Validation sets:** You should use training examples from `train` partition of DogSet. Validation should come from the `valid` partition and testing examples should come from the `test` partition.
 
-10. (0.5 points) How many connections (weights) Does the network you trained in 10 have?
+10. (0.5 points) How many connections (weights) does the network you trained in 10 have?
 
 11. (1.0 point) Train a model on DogSet. After every epoch, record three things: the loss of your model on the training set, the loss of your model on the validation set, and the accuracy of your model on the validation set. 
 
