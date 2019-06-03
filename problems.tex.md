@@ -83,20 +83,19 @@ The goal of the next three questions is to analyze DogSet and train neural netwo
 
 **When to stop training:** Stop training after 100 epochs or your validation loss changes by less than 1e-4 for three epochs in a row, whichever happens first. 
 
-**Making training sets:** You should use traning examples from `train` partition of DogSet. Validation shoud come from the `valid` partition and testing examples should come from the 'test' partition.
-
+**Training, Testing, Validation sets:** You should use traning examples from `train` partition of DogSet. Validation shoud come from the `valid` partition and testing examples should come from the 'test' partition.
 
 10. (0.5 points) How many connections (weights) Does the network you trained in 10 have?
 
 11. (1.0 point) Train a model on DogSet. After every epoch, record three things: the loss of your model on the training set, the loss of your model on the validation set, and the accuracy of your model on the validation set. 
 
-  A. Report the number of epochs for your model trained, before terminating.
+    * Report the number of epochs for your model trained, before terminating.
   
-  B. Make a graph that has both training and validation loss on the y-axis and epoch on the x-axis.
+    * Make a graph that has both training and validation loss on the y-axis and epoch on the x-axis.
   
-  C. Make a graph that has the validation accuracy on the y-axis and epoch on the x-axis. 
+    * Make a graph that has the validation accuracy on the y-axis and epoch on the x-axis. 
 
-  D. Report the accuracy of your model on the testing set.
+    * Report the accuracy of your model on the testing set.
   
 12. (0.5 points) Describe the interaction between training loss, validation loss and validation accuracy. When do you think your network stopped learning? Why do you think that? Back up your answer by referring to your graphs.
   
@@ -107,11 +106,9 @@ Convolutional layers are layers that sweep over and subsample their input in ord
 
 13. (0.5 points) Convolutional layers produce outputs that are of different size than their input by representing more than one input pixel with each node. If a 2D convolutional layer has `3` channels, batch size `16`, input size `(32, 32)`, padding `(4, 8)`, dilation `(1, 1)`, kernel size `(8, 4)`, and stride `(2, 2)`, what is the output size of the layer?
 
-14. (0.5 point) Combining convolutional layers with fully connected layers can provide a boon in scenarios involving learning from images. Using your same `train`, `valid`, and `test` DogSet  11, replace each of your first two hidden layers with a convolutional layer. When you call the PyTorch convolutional layer function, leave all of the arguments to their default settings except for kernel size and stride. 
+14. (0.5 point) Combining convolutional layers with fully connected layers can provide a boon in scenarios involving learning from images. Using your same `train`, `valid`, and `test` DogSet  11, replace each of your first two hidden layers with a convolutional layer. When you call the PyTorch convolutional layer function, leave all of the arguments to their default settings except for kernel size and stride. Determine reasonable values of kernel size and stride for each layer and report what you chose. Tell us how many connections (weights) this network has.
 
 *QUESTION: IS THE NUMBER OF CHANNELS DEFAULT A REASONABLE ONE? DO YOU JUST GET 1? IS THAT WHAT WE WANT?  DO WE NEED TO PICK SOMETHING FOR THEM ? (SEE PREVIOUS PARAGRAPH) ALSO, WHAT ARE THE POINT VALUES FOR REPORTING YOUR KERNEL SIZE VS MAKING THE GRAPH?
-
-Determine reasonable values of kernel size and stride for each layer and report what you chose. 
 
 15. (1 point) Train your convolutional model on DogSet. After every epoch, record three things: the loss of your model on the training set, the loss of your model on the validation set, and the accuracy of your model on the validation set. 
 
@@ -127,9 +124,11 @@ Determine reasonable values of kernel size and stride for each layer and report 
 
 16. (0.5 points) For any binary function of binary inputs, is it possible to construct some deep network built using only perceptron activation functions that can calculate this function correctly? If so, how would you do it? If not, why not?
 
-17. (0.5 points) Is it possible to learn any arbitrary binary function from data using a network build only using percetron activation functions? If so, how would you do it? If not, why not? 
+17. (0.5 points) Is it possible to learn any arbitrary binary function from data using a network build only using linear activation functions? If so, how would you do it? If not, why not? 
 
-18. (0.5 points) Is it possible to build a network out of linear nodes t
+18. (1 point) An adverarial example is an example that is designed to cause your machine learning model to fail. Gradient descent ML methods (like deep networks) update their weights by descending the gradient on the loss function L(X,Y,W) with respect to W. Here, X is a training example, Y is the true label and W are the weights. Explain how you could create an adversarial example by using the gradient with respect to X instead of W.
 
-19. (0.5 points)
+
+
+
 
