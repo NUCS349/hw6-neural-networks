@@ -84,7 +84,7 @@ DogSet is a subset from a popular machine learning dataset called ImageNet (more
 
 **Training, Testing, Validation sets:** You should use training examples from `train` partition of DogSet. Validation should come from the `valid` partition and testing examples should come from the `test` partition.
 
-10. (0.5 points) How many connections (weights) does the network you trained in 10 have?
+10. (0.5 points) How many connections (weights) does this network have?
 
 11. (1.0 point) Train a model on DogSet. After every epoch, record three things: the loss of your model on the training set, the loss of your model on the validation set, and the accuracy of your model on the validation set. 
 
