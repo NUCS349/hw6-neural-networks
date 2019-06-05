@@ -78,7 +78,7 @@ DogSet is a subset from a popular machine learning dataset called ImageNet (more
 
 **Build the model architecture:** Create a neural network with two fully connected (aka, dense) hidden layers of size 128, and 64, respectively. Note that you should be flattening your _NxNxC_ image to 1D for your input layer (where _N_ is the height/width, and _C_ is the number of color channels). Your network should have a total of four layers: an input layer that takes in examples, two hidden layers, and an output layer that outputs a predicted class (one node for each dog class in DogSet). Your hidden layers should have a ReLU activation function. Your last (output) layer should be a linear layer with one node per class, and the predicted label is the node that has the max value.
 
-**Use these training parameters:** Use a batch size of 10 and using cross entropy loss. Use the SGD optimizer with a learning rate of 0.01. 
+**Use these training parameters:** Use a batch size of 32 and using cross entropy loss. Use the SGD optimizer with a learning rate of 0.001. 
 
 **When to stop training:** Stop training after 100 epochs or your validation loss decreases by less than 1e-4 for three epochs in a row, whichever happens first. 
 
