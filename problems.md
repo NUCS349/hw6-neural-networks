@@ -78,13 +78,13 @@ DogSet is a subset from a popular machine learning dataset called ImageNet (more
 
 **Build the model architecture:** Create a neural network with two fully connected (aka, dense) hidden layers of size 128, and 64, respectively. Note that you should be flattening your _NxNxC_ image to 1D for your input layer (where _N_ is the height/width, and _C_ is the number of color channels). Your network should have a total of four layers: an input layer that takes in examples, two hidden layers, and an output layer that outputs a predicted class (one node for each dog class in DogSet). Your hidden layers should have a ReLU activation function. Your last (output) layer should be a linear layer with one node per class, and the predicted label is the node that has the max value.
 
-**Use these training parameters:** Use a batch size of 10 and using cross entropy loss. Use the SGD optimizer with a learning rate of 0.01. 
+**Use these training parameters:** Use a batch size of 32 and using cross entropy loss. Use the SGD optimizer with a learning rate of 0.001. 
 
-**When to stop training:** Stop training after 100 epochs or your validation loss decreases by less than 1e-4 for three epochs in a row, whichever happens first. 
+**When to stop training:** Stop training after 100 epochs or when your validation loss doesn't decrease by more than 1e-4 for 3 epochs in a row., whichever happens first.
 
 **Training, Testing, Validation sets:** You should use training examples from `train` partition of DogSet. Validation should come from the `valid` partition and testing examples should come from the `test` partition.
 
-10. (0.5 points) How many connections (weights) does the network you trained in 10 have?
+10. (0.5 points) How many connections (weights) does this network have?
 
 11. (1.0 point) Train a model on DogSet. After every epoch, record three things: the loss of your model on the training set, the loss of your model on the validation set, and the accuracy of your model on the validation set. 
 
