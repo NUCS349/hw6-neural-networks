@@ -80,7 +80,7 @@ DogSet is a subset from a popular machine learning dataset called ImageNet (more
 
 **Use these training parameters:** Use a batch size of 32 and using cross entropy loss. Use the SGD optimizer with a learning rate of 0.001. 
 
-**When to stop training:** Stop training after 100 epochs or your validation loss decreases by less than 1e-4 for three epochs in a row, whichever happens first. 
+**When to stop training:** Stop training after 100 epochs or when your validation loss doesn't decrease by more than 1e-4 for 3 epochs in a row., whichever happens first.
 
 **Training, Testing, Validation sets:** You should use training examples from `train` partition of DogSet. Validation should come from the `valid` partition and testing examples should come from the `test` partition.
 
