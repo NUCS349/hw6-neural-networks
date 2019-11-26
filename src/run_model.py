@@ -81,7 +81,7 @@ def _train(model,data_loader,optimizer,device=torch.device('cpu')):
 
 	Inputs:
 	model: the neural network to be trained
-	data_loader: for loading the netowk input and targets from the training dataset
+	data_loader: for loading the netowrk input and targets from the training dataset
 	optimizer: the optimiztion method, e.g., SGD 
 	device: we run everything on CPU in this homework
 
@@ -101,12 +101,12 @@ def _test(model, data_loader, device=torch.device('cpu')):
 
 	Inputs:
 	model: trained neural network
-	data_loader: for loading the netowk input and targets from the testing dataset
+	data_loader: for loading the netowrk input and targets from the validation ortesting dataset
 	device: we run everything on CPU in this homework
 
 	Output:
-	test_loss: average loss value on the entire validation set or testing set 
-	test_accuracy: percentage of correctly classified samples in the validation or testing set
+	test_loss: average loss value on the entire validation or testing dataset 
+	test_accuracy: percentage of correctly classified samples in the validation or testing dataset
 	"""
 
 	raise NotImplementedError()
