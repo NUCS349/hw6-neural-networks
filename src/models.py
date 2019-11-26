@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 
+# Please read the free response questions before starting to code.
 
 class Digit_Classifier(nn.Module):
     """

@@ -6,6 +6,7 @@ from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 import numpy as np
 
+# Please read the free response questions before starting to code.
 
 def run_model(model,running_mode='train', train_set=None, valid_set=None, test_set=None, 
 	batch_size=1, learning_rate=0.01, n_epochs=1, stop_thr=1e-4, shuffle=True):
