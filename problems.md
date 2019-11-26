@@ -3,11 +3,11 @@
 Your task is to implement neural networks and train them to perform classification on different types of data. You will write the following code:
 
 - A function for training a model on a training dataset for one epoch (in `src/run_model.py`)
-- A testing function for evaluating a trained model on a validation/testing dataset (in `src/run_model.py`)
+- A function for evaluating a trained model on a validation/testing dataset (in `src/run_model.py`)
 - A function which trains (over multiple epoch), validates, or tests a model as specified (in `src/run_model.py`)
 - Two fully connected and two convolutional neural networks (in `src/models.py`)
 
-You will also have to write code for experiments. We recommend you write the code and test it in the above order.
+You will also have to write code for experiments. Note that the free response questions provide necessary information for writing the code above. Therefore, we recommend you write the code and after going through the free response questions and follow the same order in running the experiments. 
 
 Your grade for this section is defined by the autograder. If it says you got an 80/100, you get 4 points here.
 
