@@ -84,15 +84,15 @@ class Synth_Classifier(nn.Module):
     - Input layer
     - First hidden layer: convolutional layer of size (select kernel size and stride)
     - Second hidden layer: convolutional layer of size (select kernel size and stride)
-    - Output layer: a linear layer with one node per class (in this case 10)
+    - Output layer: a linear layer with one node per class (in this case 2)
 
     Activation function: ReLU for both hidden layers
 
     Inputs: 
-    kernel_size: list of length 2 containing kernel sizes for the two convolutional layers
-                 e.g., kernel_size = [(3,3), (3,3)]
-    stride: list of length 2 containing strides for the two convolutional layers
-            e.g., stride = [(1,1), (1,1)]
+    kernel_size: list of length 3 containing kernel sizes for the three convolutional layers
+                 e.g., kernel_size = [(5,5), (3,3),(3,3)]
+    stride: list of length 3 containing strides for the three convolutional layers
+            e.g., stride = [(1,1), (1,1),(1,1)]
 
     """
 
