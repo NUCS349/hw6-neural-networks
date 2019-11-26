@@ -153,7 +153,7 @@ Use strides of size (1,1) and ReLU activation functions in all convolutional lay
 14. (1 point) Once the network is trained extract and plot the weights of the two kernels in the first layer. Do these kernels present any particular patterns? If so, what are those patterns and how are they related to the classification task at hand and the classifier performance? Note that since the model is randomly initialized (by default in PyTorch), the shape of kernels might be different across different training sessions. Repeat the experiment a few times and give a brief description of your observations.
 
 
-## Thinking about deep models (2.0 points - 1.0 point extra credit)
+## Thinking about deep models (1 point + 1 point extra credit)
 
 15. (0.5 points) For any binary function of binary inputs, is it possible to construct some deep network built using only perceptron activation functions that can calculate this function correctly? If so, how would you do it? If not, why not?
 
