@@ -101,7 +101,7 @@ def _test(model, data_loader, device=torch.device('cpu')):
 
 	Inputs:
 	model: trained neural network
-	data_loader: for loading the netowrk input and targets from the validation ortesting dataset
+	data_loader: for loading the netowrk input and targets from the validation or testing dataset
 	device: we run everything on CPU in this homework
 
 	Output:
