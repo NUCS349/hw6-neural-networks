@@ -13,7 +13,7 @@ Your grade for this section is defined by the autograder. If it says you got an 
 
 You should make a conda environment for this homework just like you did for previous homeworks. We have included a requirements.txt.
 
-# Free-response questions (5 points + 4 extra credit points)
+# Free-response questions (9 points)
 
 To answer the free-response questions, you will have to write extra code (that is not covered by the test cases). You may include your experiments in new files in the `experiments` directory. See `experiments/example.py` for an example. You can run any experiments you create within this directory with `python -m experiments.<experiment_name>`. For example, `python -m experiments.example` runs the example experiment. You must hand in whatever code you write for experiments by pushing to github (as you did for all previous assignments). 
 
