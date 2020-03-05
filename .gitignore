@@ -613,3 +613,5 @@ solution/
 # files generated during test
 tests/test.csv
 
+# a large data file
+data/synth_data
