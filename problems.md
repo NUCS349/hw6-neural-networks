@@ -133,7 +133,7 @@ Convolutional layers are layers that sweep over and subsample their input in ord
 
 The most important property of convolutional networks is their capability in capturing **shift invariant** patterns. You will investigate this property by training a convolutional network to classify simple synthesized images and visualizing the learned kernels. 
 
-**Exploring the synthesized dataset:** the synth_data file included in the /data directory contains 10000 images of simple patterns, divided into 2 classes (5000 images per class). Use the `load_synth_data` function in `data/load_data.py` to load the training features (images) and labels. 
+**Exploring the synthesized dataset:** Download the [synth_data file](https://nucs349.github.io/data/synth_data.zip), unzip it, and put it in `/data` directory. `synth_data` contains 10000 images of simple patterns, divided into 2 classes (5000 images per class). Use the `load_synth_data` function in `data/load_data.py` to load the training features (images) and labels. 
 
 13. (1 point) Go through a few images and plot two examples (1 from each class). What is the common feature among the samples included in each class? What is different from one sample to the next in each class? What information must a classifier rely on to be able to tell these classes apart?
 
