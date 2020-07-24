@@ -1,3 +1,9 @@
+# Jupyter Notebook
+
+Please check out the following Jupyter Notebook that should help you with guidance through the homework:
+experiments/deep-learning-experiments.ipynb
+
+
 # Coding (5 points)
 
 Your task is to implement neural networks and train them to perform classification on different types of data. You will write the following code:
