@@ -23,6 +23,12 @@ See problems.md for what files you will edit.
 
 Do not edit anything in the `tests` directory. Files can be added to `tests` but files that exist already cannot be edited. Modifications to tests will be checked for.
 
+## Jupyter Notebook
+
+We have created a jupyter notebook which you can use that should guide you through the complete homework. We heavily recommend using it, since most Deep Learning research is now done within Jupyter Notebooks. You find the notebook here:
+
+experiments/deep-learning-experiments.ipynb
+
 ## Environment setup
 
 Make a conda environment for this assignment, and then run:
