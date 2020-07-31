@@ -78,6 +78,7 @@ def _train(model,data_loader,optimizer,device=torch.device('cpu')):
 	"""
 	This function implements ONE EPOCH of training a neural network on a given dataset.
 	Example: training the Digit_Classifier on the MNIST dataset
+	Use nn.CrossEntropyLoss() for the loss function
 
 
 	Inputs:
@@ -99,6 +100,7 @@ def _test(model, data_loader, device=torch.device('cpu')):
 	"""
 	This function evaluates a trained neural network on a validation set
 	or a testing set. 
+	Use nn.CrossEntropyLoss() for the loss function
 
 	Inputs:
 	model: trained neural network
