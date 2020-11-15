@@ -4,6 +4,10 @@ import torch.nn.functional as F
 import numpy as np
 
 # Please read the free response questions before starting to code.
+#
+# Note: Avoid using nn.Sequential here, as it prevents the test code from
+# correctly checking your model architecture and will cause your code to
+# fail the tests.
 
 class Digit_Classifier(nn.Module):
     """
