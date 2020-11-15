@@ -11,7 +11,7 @@ Your task is to implement neural networks and train them to perform classificati
 - A function for training a model on a training dataset for one epoch (in `src/run_model.py`)
 - A function for evaluating a trained model on a validation/testing dataset (in `src/run_model.py`)
 - A function which trains (over multiple epoch), validates, or tests a model as specified (in `src/run_model.py`)
-- Two fully connected and two convolutional neural networks (in `src/models.py`)
+- Two fully connected neural networks (in `src/models.py`)
 
 You will also have to write code for experiments. Note that the free response questions provide necessary information for writing the code above. Therefore, we recommend you write the code after going through the free response questions and follow the same order in running the experiments. 
 
@@ -19,7 +19,7 @@ Your grade for this section is defined by the autograder. If it says you got an 
 
 You should make a conda environment for this homework just like you did for previous homeworks. We have included a requirements.txt.
 
-# Free-response questions (9 points)
+# Free-response questions (5 points)
 
 To answer the free-response questions, you will have to write extra code (that is not covered by the test cases). You may include your experiments in new files in the `experiments` directory. See `experiments/example.py` for an example. You can run any experiments you create within this directory with `python -m experiments.<experiment_name>`. For example, `python -m experiments.example` runs the example experiment. You must hand in whatever code you write for experiments by pushing to github (as you did for all previous assignments). 
 
@@ -38,7 +38,7 @@ Here is a cheat sheet of commonly used methods: [https://pytorch.org/tutorials/b
 
 Here is a comparison of PyTorch and Numpy methods: [https://github.com/wkentaro/pytorch-for-numpy-users](https://github.com/wkentaro/pytorch-for-numpy-users)
 
-**IMPORTANT: PyTorch is not included in `requirements.txt`!** To install PyTorch, find the correct install command for your operating system and version of python [here](https://pytorch.org/get-started/locally/). For "PyTorch Build" select the `Stable (1.4)` build, select your operating system, for "Package" select `pip` , for "Language" select your python version (either python 3.5, 3.6, or 3.7), and finally for "CUDA" select `None`. **Make sure to run the command with your conda environment activated.**
+To install PyTorch, find the correct install command for your operating system and version of python [here](https://pytorch.org/get-started/locally/). For "PyTorch Build" select the `Stable (1.7)` build, select your operating system, for "Package" select `pip` , for "Language" select your python version (either python 3.5, 3.6, or 3.7), and finally for "CUDA" select `None`. **Make sure to run the command with your conda environment activated.**
 
 _Note: To determine which python you are using, type `python --version` into your command line._
 
@@ -112,52 +112,6 @@ DogSet is a subset from a popular machine learning dataset called ImageNet (more
 
 
 9. (0.5 points) Describe the interaction between training loss, validation loss and validation accuracy. When do you think your network stopped learning something meaningful to the problem? Why do you think that? Back up your answer by referring to your graphs.
-
-
-## Convolutional layers (2 points)
-
-Convolutional layers are layers that sweep over and subsample their input in order to represent complex structures in the input layers. For more information about how they work, [see this blog post](https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/). Don't forget to read the PyTorch documentation about Convolutional Layers (linked above).
-
-10. (0.5 points) Convolutional layers produce outputs that are of different size than their input by representing more than one input pixel with each node. If a 2D convolutional layer has `3` channels, batch size `16`, input size `(32, 32, 1)`, padding `(4, 8)`, dilation `(1, 1)`, kernel size `(8, 4)`, and stride `(2, 2)`, what is the output size of the layer (1 input layer, 3 output layers)?
-
-If you're unsure about the answer, explain why you came up with the specific output size and we can give you points for your derivation, even it's wrong.
-
-11. (0.5 point) Combining convolutional layers with fully connected layers can provide a boon in scenarios involving learning from images. Using a similar architecture to the one used in question 8, replace each of your first two hidden layers with a convolutional layer, and add a fully connected layer to output predictions as before. The number of filters (out_channels) should be 16 for the first convolutional layer and 32 for the second convolutional layer. When you call the PyTorch convolutional layer function, leave all of the arguments to their default settings except for kernel size and stride. Determine reasonable values of kernel size and stride for each layer and report what you chose. Tell us how many connections (weights) this network has.
-
-
-12. (1 point) Train your convolutional model on DogSet. After every epoch, record four things: the loss of your model on the training set, the loss of your model on the validation set, and the accuracy of your model on both training and validation sets. (Use the same batch size, max epochs, learning rate)
-
-    * Report the number of epochs your model trained, before terminating.
-  
-    * Make a graph that has both training and validation loss on the y-axis and epoch on the x-axis.
-  
-    * Make a graph that has both training and validation accuracy on the y-axis and epoch on the x-axis. 
-
-    * Report the accuracy of your model on the testing set.
-
-
-## Digging more deeply into convolutional networks (2 points) ##
-
-The most important property of convolutional networks is their capability in capturing **shift invariant** patterns. You will investigate this property by training a convolutional network to classify simple synthesized images and visualizing the learned kernels. 
-
-**Exploring the synthesized dataset:** Download the [synth_data file](https://nucs349.github.io/data/synth_data.zip), unzip it, and put it in `/data` directory. `synth_data` contains 10000 images of simple patterns, divided into 2 classes (5000 images per class). Use the `load_synth_data` function in `data/load_data.py` to load the training features (images) and labels. 
-
-13. (1 point) Go through a few images and plot two examples (1 from each class). What is the common feature among the samples included in each class? What is different from one sample to the next in each class? What information must a classifier rely on to be able to tell these classes apart?
-
-
-**Build the classifier:** Create a convolutional neural network including three convolutional layers and a linear output layer. The numbers and sizes of filters should be as follows:
-
-* First layer: 2 filters of size (5,5)
-
-* Second layer: 4 filters of size (3,3)
-
-* Third layer: 8 filters of size (3,3)
-
-Use strides of size (1,1) and ReLU activation functions in all convolutional layers. Each convolutional layer should be followed by max-pooling with a kernel size of 2. Use an output linear layer with two nodes, one for each class (note that for binary classification you can use a single node with a sigmoid activation function and binary cross entropy loss, but using softmax and cross entropy keeps the code simpler in this homework).
-
-**Training parameters:** Use a cross entropy loss and the SGD optimizer. Set the batch size to 50 and learning rate to 1e-4. Train the network for 50 epochs.   
-
-14. (1 point) Once the network is trained extract and plot the weights of the two kernels in the first layer. Do these kernels present any particular patterns? If so, what are those patterns and how are they related to the classification task at hand and the classifier performance? Note that since the model is randomly initialized (by default in PyTorch), the shape of kernels might be different across different training sessions. Repeat the experiment a few times and give a brief description of your observations.
 
 
 ## Thinking about deep models (1.5 points)
