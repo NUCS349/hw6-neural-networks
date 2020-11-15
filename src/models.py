@@ -9,28 +9,28 @@ class Digit_Classifier(nn.Module):
     """
     This is the class that creates a neural network for classifying handwritten digits
     from the MNIST dataset.
-	
-	Network architecture:
-	- Input layer
-	- First hidden layer: fully connected layer of size 128 nodes
-	- Second hidden layer: fully connected layer of size 64 nodes
-	- Output layer: a linear layer with one node per class (in this case 10)
 
-	Activation function: ReLU for both hidden layers
+    Network architecture:
+    - Input layer
+    - First hidden layer: fully connected layer of size 128 nodes
+    - Second hidden layer: fully connected layer of size 64 nodes
+    - Output layer: a linear layer with one node per class (in this case 10)
+
+    Activation function: ReLU for both hidden layers
 
     """
     def __init__(self):
         super(Digit_Classifier, self).__init__()
 
-    def forward(self, input):
+    def forward(self, inputs):
         raise NotImplementedError()
-    
+
 
 class Dog_Classifier_FC(nn.Module):
     """
     This is the class that creates a fully connected neural network for classifying dog breeds
     from the DogSet dataset.
-    
+
     Network architecture:
     - Input layer
     - First hidden layer: fully connected layer of size 128 nodes
@@ -44,7 +44,7 @@ class Dog_Classifier_FC(nn.Module):
     def __init__(self):
         super(Dog_Classifier_FC, self).__init__()
 
-    def forward(self, input):
+    def forward(self, inputs):
         raise NotImplementedError()
 
 
@@ -52,7 +52,7 @@ class Dog_Classifier_Conv(nn.Module):
     """
     This is the class that creates a convolutional neural network for classifying dog breeds
     from the DogSet dataset.
-    
+
     Network architecture:
     - Input layer
     - First hidden layer: convolutional layer of size (select kernel size and stride)
@@ -60,18 +60,18 @@ class Dog_Classifier_Conv(nn.Module):
     - Output layer: a linear layer with one node per class (in this case 10)
 
     Activation function: ReLU for both hidden layers
-    
-    There should be a maxpool after each convolution. 
-    
-    The sequence of operations looks like this:
-    
-    	1. Apply convolutional layer with stride and kernel size specified
-		- note: uses hard-coded in_channels and out_channels
-		- read the problems to figure out what these should be!
-	2. Apply the activation function (ReLU)
-	3. Apply 2D max pooling with a kernel size of 2
 
-    Inputs: 
+    There should be a maxpool after each convolution.
+
+    The sequence of operations looks like this:
+
+        1. Apply convolutional layer with stride and kernel size specified
+            - note: uses hard-coded in_channels and out_channels
+            - read the problems to figure out what these should be!
+        2. Apply the activation function (ReLU)
+        3. Apply 2D max pooling with a kernel size of 2
+
+    Inputs:
     kernel_size: list of length 2 containing kernel sizes for the two convolutional layers
                  e.g., kernel_size = [(3,3), (3,3)]
     stride: list of length 2 containing strides for the two convolutional layers
@@ -80,17 +80,17 @@ class Dog_Classifier_Conv(nn.Module):
     """
 
     def __init__(self, kernel_size, stride):
-        super(Dog_Classifier_Conv, self).__init__()   
+        super(Dog_Classifier_Conv, self).__init__()
 
-    def forward(self, input):
+    def forward(self, inputs):
         raise NotImplementedError()
 
 
 class Synth_Classifier(nn.Module):
     """
-    This is the class that creates a convolutional neural network for classifying 
+    This is the class that creates a convolutional neural network for classifying
     synthesized images.
-    
+
     Network architecture:
     - Input layer
     - First hidden layer: convolutional layer of size (select kernel size and stride)
@@ -98,18 +98,18 @@ class Synth_Classifier(nn.Module):
     - Output layer: a linear layer with one node per class (in this case 2)
 
     Activation function: ReLU for both hidden layers
-    
-    There should be a maxpool after each convolution. 
-    
-    The sequence of operations looks like this:
-    
-    	1. Apply convolutional layer with stride and kernel size specified
-		- note: uses hard-coded in_channels and out_channels
-		- read the problems to figure out what these should be!
-	2. Apply the activation function (ReLU)
-	3. Apply 2D max pooling with a kernel size of 2
 
-    Inputs: 
+    There should be a maxpool after each convolution.
+
+    The sequence of operations looks like this:
+
+        1. Apply convolutional layer with stride and kernel size specified
+            - note: uses hard-coded in_channels and out_channels
+            - read the problems to figure out what these should be!
+        2. Apply the activation function (ReLU)
+        3. Apply 2D max pooling with a kernel size of 2
+
+    Inputs:
     kernel_size: list of length 3 containing kernel sizes for the three convolutional layers
                  e.g., kernel_size = [(5,5), (3,3),(3,3)]
     stride: list of length 3 containing strides for the three convolutional layers
@@ -118,22 +118,8 @@ class Synth_Classifier(nn.Module):
     """
 
     def __init__(self, kernel_size, stride):
-        super(Synth_Classifier, self).__init__()   
-        
-    def forward(self, input):
+        super(Synth_Classifier, self).__init__()
+
+    def forward(self, inputs):
         raise NotImplementedError()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
