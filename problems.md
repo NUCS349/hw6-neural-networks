@@ -11,7 +11,7 @@ Your task is to implement neural networks and train them to perform classificati
 - A function for training a model on a training dataset for one epoch (in `src/run_model.py`)
 - A function for evaluating a trained model on a validation/testing dataset (in `src/run_model.py`)
 - A function which trains (over multiple epoch), validates, or tests a model as specified (in `src/run_model.py`)
-- Two fully connected neural networks (in `src/models.py`)
+- Two fully connected neural networks and two convolutional neural networks (in `src/models.py`)
 
 You will also have to write code for experiments. Note that the free response questions provide necessary information for writing the code above. Therefore, we recommend you write the code after going through the free response questions and follow the same order in running the experiments. 
 
@@ -114,14 +114,37 @@ DogSet is a subset from a popular machine learning dataset called ImageNet (more
 9. (0.5 points) Describe the interaction between training loss, validation loss and validation accuracy. When do you think your network stopped learning something meaningful to the problem? Why do you think that? Back up your answer by referring to your graphs.
 
 
-## Thinking about deep models (1.5 points)
+## Convolutional layers (2 points)
 
-15. (0.25 points) For any binary function of binary inputs, is it possible to construct some deep network built using only perceptron activation functions that can calculate this function correctly? If so, how would you do it? If not, why not?
+Convolutional layers are layers that sweep over and subsample their input in order to represent complex structures in the input layers. For more information about how they work, [see this blog post](https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/). Don't forget to read the PyTorch documentation about Convolutional Layers (linked above).
+
+10. (0.5 points) Convolutional layers produce outputs that are of different size than their input by representing more than one input pixel with each node. If a 2D convolutional layer has `3` channels, batch size `16`, input size `(32, 32)`, padding `(4, 8)`, dilation `(1, 1)`, kernel size `(8, 4)`, and stride `(2, 2)`, what is the output size of the layer?
 
 
-17. (0.25 points) Is it possible to learn any arbitrary binary function from data using a network build only using linear activation functions? If so, how would you do it? If not, why not? 
+11. (0.5 point) Combining convolutional layers with fully connected layers can provide a boon in scenarios involving learning from images. Using a similar architecture to the one used in question 8, replace each of your first two hidden layers with a convolutional layer, and add a fully connected layer to output predictions as before. The number of filters (out_channels) should be 16 for the first convolutional layer and 32 for the second convolutional layer. When you call the PyTorch convolutional layer function, leave all of the arguments to their default settings except for kernel size and stride. Determine reasonable values of kernel size and stride for each layer and report what you chose. Tell us how many connections (weights) this network has.
 
-18. (1 point) An adversarial example is an example that is designed to cause your machine learning model to fail. Gradient descent ML methods (like deep networks) update their weights by descending the gradient on the loss function L(X,Y,W) with respect to W. Here, X is a training example, Y is the true label and W are the weights. Explain how you could create an adversarial example by using the gradient with respect to X instead of W.
+
+12. (1 point) Train your convolutional model on DogSet. After every epoch, record four things: the loss of your model on the training set, the loss of your model on the validation set, and the accuracy of your model on both training and validation sets. 
+
+    * Report the number of epochs your model trained, before terminating.
+  
+    * Make a graph that has both training and validation loss on the y-axis and epoch on the x-axis.
+  
+    * Make a graph that has both training and validation accuracy on the y-axis and epoch on the x-axis. 
+
+    * Report the accuracy of your model on the testing set.
+
+
+## Digging more deeply into convolutional networks (1 points) ##
+
+15. (1 point) Use the notebook in experiments named "CNN-Free-Response.ipynb" and answer the following questions:
+    - (a) What does each graph of the seven graphs represent? Why are the images repeated several times on each of the seven graphs?
+
+    - (b) What do light regions of the graphs indicate? Take your best guess on this question, we want you to think about what's happening in a CNN using what you've learned in class. 
+
+    - (c) What are the ouput dimensons of each of the CNN layers?
+
+## Thinking about deep models (1 points)
 
 
 
