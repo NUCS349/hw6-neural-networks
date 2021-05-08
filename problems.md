@@ -150,6 +150,6 @@ Use the notebook in experiments named "deep_learning_visualize.ipynb" for the ne
 
 16) (0.5 points) Experiment with different parameters for your network. Try changing the number of layers, the number of nodes per layer, and the activation function. How does this affect the accuracy of your model?
 
-17) (0.5 points)  Take your best performing model and train it three times, but change the value of the "scale" parameter from 1 to 2 to 3. Show your results below.**
-
+17) (0.5 points)  Take your best performing model and train it three times, but change the value of the "scale" parameter from 1 to 2 to 3. Show your results. 
 What do you notice about the decision boundary as you zoom out? What does this tell us about how neural networks extrapolate beyond the data it is given?
+
