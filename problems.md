@@ -1,3 +1,7 @@
+# READ THIS FIRST
+
+Please READ the COMPLETE problems.md BEFORE you start doing anything else! It is essential to read everything so that you know what needs to be done for completion of this homework!
+
 # Jupyter Notebook
 
 Please check out the following Jupyter Notebook that should help you with guidance through the homework:
