@@ -1,4 +1,4 @@
-# READ THIS FIRST
+# READ PROBLEMS.MD FIRST AND FULL BEFORE DOING ANYTHING ELSE
 
 Please READ the COMPLETE problems.md BEFORE you start doing anything else! It is essential to read everything so that you know what needs to be done for completion of this homework!
 
