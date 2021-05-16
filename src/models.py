@@ -85,3 +85,36 @@ class Dog_Classifier_Conv(nn.Module):
         raise NotImplementedError()
 
 
+class Large_Dog_Classifier(nn.Module):
+    """
+    This is the class that creates a convolutional neural network for visualizing an image as it is passed through a convolutional neural network.
+
+    """
+
+    def __init__(self):
+        super(Large_Dog_Classifier, self).__init__()
+        self.conv1 = nn.Conv2d(3, 4, kernel_size=(3, 3), padding=1)
+        self.conv2 = nn.Conv2d(4, 6, kernel_size=(3,3), padding=1)
+        self.conv3 = nn.Conv2d(6, 8, kernel_size=(3, 3))
+        self.conv4 = nn.Conv2d(8, 10, kernel_size=(3, 3))
+        self.conv5 = nn.Conv2d(10, 12, kernel_size=(3, 3))
+        self.conv6 = nn.Conv2d(12, 14, kernel_size=(3, 3))
+        self.conv7 = nn.Conv2d(14, 16, kernel_size=(3, 3), stride=(2,2))
+        self.fc1 = nn.Linear(11664, 1024)
+        self.fc2 = nn.Linear(1024, 10)
+
+    def forward(self, input):
+        input = input.permute((0, 3, 1, 2))
+        input = F.relu(self.conv1(input))
+        input = F.relu(self.conv2(input))
+        input = F.relu(self.conv3(input))
+        input = F.relu(self.conv4(input))
+        input = F.relu(self.conv5(input))
+        input = F.relu(self.conv6(input))
+        input = F.relu(self.conv7(input))
+        input = F.relu(self.fc1(input.view(-1, 11664)))
+        input = self.fc2(input)
+
+        return input
+
+    
