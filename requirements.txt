@@ -1,0 +1,8 @@
+numpy
+pytest
+pandas
+scipy
+tqdm
+torch
+torchvision
+matplotlib
