@@ -1,4 +1,4 @@
-# HW6: Neural Networks for CS349 @ NU
+# HW 7: Neural Networks for CS349 @ NU
 **IMPORTANT: PUT YOUR NETID IN THE FILE** `netid` in the root directory of the assignment. 
 This is used to put the autograder output into Canvas. Please don't put someone else's netid 
 here, we will check.
@@ -6,7 +6,7 @@ here, we will check.
 
 In this assignment, you will:
 - Learn how to use PyTorch
-- Implement two types of neural networks
+- Implement two types of Neural Networks
 - Explore the impact of different hyperparameters on your networks' performance
 
 ## Clone this repository
